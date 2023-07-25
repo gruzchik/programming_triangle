@@ -36,6 +36,7 @@ class Main {
           break;
         }
       }
+      System.out.println("isCorrecCity value is:" + isCorrectCity);
 
       if (!isCorrectCity) {
         System.out.println("Такого міста не існує в базі даних. Введіть інше місто");
@@ -54,16 +55,19 @@ class Main {
       }
 
       char lastChar = input.charAt(input.length() - 1);
+      lastComputerCity = getRandomCity(lastChar);
+      System.out.println("Моє місто: " + lastComputerCity);
+      
 
-      for (String city : cities) {
-        char firstChar = city.charAt(0);
+      // for (String city : cities) {
+      //   char firstChar = city.charAt(0);
 
-        if (Character.toLowerCase(lastChar) == Character.toLowerCase(firstChar)) {
-          System.out.println("Моє місто: " + city);
-          lastComputerCity = city;
-          break;
-        }
-      }
+      //   if (Character.toLowerCase(lastChar) == Character.toLowerCase(firstChar)) {
+      //     System.out.println("Моє місто: " + city);
+      //     lastComputerCity = city;
+      //     break;
+      //   }
+      // }
     }
   }
 
@@ -75,8 +79,8 @@ class Main {
       }
     }
     Random random = new Random();
-    int index = random.nextInt(cities.size());
-    return cities.get(index);
+    int index = random.nextInt(properCities.size());
+    return properCities.get(index);
   }
 
   private static void fillCities() {

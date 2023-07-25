@@ -24,6 +24,7 @@ class Main {
 
       if (input.equals("exit")) {
         System.out.println("Дякую за гру!");
+        System.out.println("Ви краще знаєте міста України");
         System.exit(0);
       }
 
@@ -50,7 +51,6 @@ class Main {
           System.out.println("Ви ввели місто з неправильною першою буквою");
           continue;
         }
-
       }
 
       char lastChar = input.charAt(input.length() - 1);
